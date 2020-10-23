@@ -1,0 +1,95 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.datasets import load_Iris_data
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+
+data = load_Iris_data()
+X = data.data
+y = data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size= 0.8, test_size= 0.2)
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+for i in range(5,31,5):
+  model = KNeighborsClassifier(n_neighbors=i)
+  model.fit(X_train, y_train)
+  predictions = model.predict(X_test)
+  print("K= ", i)
+  print(classification_report(y_test, predictions))
+  **************************
+  import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.datasets import load_lung_cancer
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+
+data = load_lung_cancer()
+X = data.data
+y = data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size= 0.8, test_size= 0.2)
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+for i in range(5,31,5):
+  model = KNeighborsClassifier(n_neighbors=i)
+  model.fit(X_train, y_train)
+  predictions = model.predict(X_test)
+  print("K= ", i)
+  print(classification_report(y_test, predictions))
+  *************************
+  import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.datasets import load_face_images
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+
+data = load_face_images()
+X = data.data
+y = data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size= 0.8, test_size= 0.2)
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+for i in range(5,31,5):
+  model = KNeighborsClassifier(n_neighbors=i)
+  model.fit(X_train, y_train)
+  predictions = model.predict(X_test)
+  print("K= ", i)
+  print(classification_report(y_test, predictions))
+  **********************************
+  import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+
+data = load_breast_cancer()
+X = data.data
+y = data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size= 0.8, test_size= 0.2)
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+for i in range(5,31,5):
+  model = KNeighborsClassifier(n_neighbors=i)
+  model.fit(X_train, y_train)
+  predictions = model.predict(X_test)
+  print("K= ", i)
+  print(classification_report(y_test, predictions))
